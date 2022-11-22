@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../build/output.css">
+    <title>Document</title>
+</head>
+<body >
+    <div class=" bg-slate-900 h-screen grid place-content-center place-items-center gap-5 ">
+        <h1 class="text-7xl text-white font-medium"><span class="text-red-400" >TailWind</span> template</h1>
+        <h1 class="text-center text-gray-300 text-3xl max-w-lg">A starter tailwind template so i dont have to write fucking configs again</h1>
+
+        <button class="  flex flex-row items-center gap-5 text-white copy-to-clip  text-lg px-4 py-3 max-w-fit hover:bg-slate-700 border border-slate-500"  >npm create-tailwind-starter- <img class=" inline-block" width="20" src="./assets/clipboard-with-text-svgrepo-com.svg" alt=""> </button>
+
+       <!-- <div class="flex flex-row gap-6">
+        <button class=" text-white  text-lg w-fit font-semibold rounded-md px-3 py-2 bg-twitch hover:bg-tw text-centeritch_light" >helloo</button>
+         <button class=" text-white  text-lg w-fit font-semibold rounded-md px-3 py-2 bg-green-700 hover:bg-twitch_light" >helloo</button>
+       </div> -->
+       <div id="alert"  class=" items-center alert  bg-blue-500 hidden text-white text-sm font-bold px-4 py-3  transition-all ease-in-out duration-200 fixed bottom-16 left-50%"  role="alert">
+       
+        <p>text copied to clipboard!</p>
+      </div>
+    </div>
+
+    <script>
+        const clipButton = document.querySelector('.copy-to-clip')
+        const alertt = document.querySelector('.alert')
+        clipButton.addEventListener('click',copyToClipboard)
+        function copyToClipboard(){
+            navigator.clipboard.writeText(clipButton.textContent)
+            // alert('copied to clibboard: '+ clipButton.textContent)
+           alertt.classList.remove('hidden')
+
+           setTimeout(() => {
+            alertt.classList.add('hidden')
+           }, 2000);
+        }
+    </script>
+</body>
+</html>
