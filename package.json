@@ -1,16 +1,23 @@
 {
-  "name": "tailwind-starter-template",
-  "version": "1.0.0",
-  "description": "",
+  "name": "@brownsaiyan/tailwind-starter-template",
+  "version": "1.0.2",
+  "description": "a vanilla js tailwind template with configs",
+  "bin": "./bin/cli.js",
   "main": "index.js",
   "scripts": {
     "build": "npx tailwindcss -i ./src/input.css -o ./build/output.css",
-    "watch": "npx tailwindcss -i ./src/input.css -o ./build/output.css --watch"
+    "watch": "npx tailwindcss -i ./src/input.css -o ./build/output.css --watch",
+    "start": "npm run open",
+    "open": "concurrently \"http-server -a localhost -p 1234 -o ./src/index.html\" \"npm run watch\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "tailwindcss": "^3.2.1"
+  },
+  "dependencies": {
+    "concurrently": "^7.6.0",
+    "http-server": "^14.1.1"
   }
 }
